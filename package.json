@@ -1,0 +1,22 @@
+{
+  "name": "scwebassignment",
+  "version": "1.0.0",
+  "description": "Candidate Qualification Assignment, Test Automation, Web: https://demoqa.com/",
+  "main": "index.js",
+  "scripts": {
+    "test-all-chrome": "testcafe \"chrome '--window-size=1440,800'\"",
+    "test-all-headless-chrome": "testcafe chrome:headless",
+    "test-all-iphoneX-chrome": "testcafe \"chrome:emulation:device=iphone 6/7/8\"",
+    "test-all-firefox": "testcafe \"firefox -width 1440 -height 800\"",
+    "test-all-headless-firefox": "testcafe firefox:headless",
+    "test-all-installed-browsers": "testcafe all"
+  },
+  "author": "Ricardo Toledo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "faker": "^5.5.3",
+    "generate-password": "^1.7.0",
+    "testcafe": "^1.18.1"
+  }
+}
