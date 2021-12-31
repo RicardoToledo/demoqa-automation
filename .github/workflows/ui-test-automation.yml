@@ -19,15 +19,16 @@ jobs:
     - run: echo "USERNAME=${{ secrets.DEMOQA_USERNAME }} PASSWORD=${{ secrets.DEMOQA_PASSWORD }}" >> .env
     # Run TestCafe Suite
     - name: Install TestCafe from 'npm' and Run Tests in Chrome browser
-        uses: DevExpress/testcafe-action@latest
-        with:
-          args: "chrome '--window-size=1440,800'"
+      uses: DevExpress/testcafe-action@latest
+      with:
+        args: "chrome '--window-size=1440,800'"
     # Finally we upload the results to Calliope.
     - name: Upload results to Calliope
-      run: curl -X POST \
-      -H "multipart/form-data" \
-      -H "x-api-key:${{ secrets.CALLIOPEPRO_API_KEY }}" \
-      -F "file[]=@results/report.json" \
-      -F "tag[]=<YOUR_OS>" \
-      -F "tag[]=<YOUR_PLATFORM>" \
-      "https://app.calliope.pro/api/v2/profile/${{ secrets.CALLIOPEPRO_PROFILE_ID }}/import/"
+      run: |
+        curl -X POST \
+        -H "multipart/form-data" \
+        -H "x-api-key:${{ secrets.CALLIOPEPRO_API_KEY }}" \
+        -F "file[]=@results/report.json" \
+        -F "tag[]=<YOUR_OS>" \
+        -F "tag[]=<YOUR_PLATFORM>" \
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.CALLIOPEPRO_PROFILE_ID }}/import/"
