@@ -1,0 +1,13 @@
+{
+    "src": ["./tests"],
+    "reporter": [
+        {
+            "name": "spec"
+        },
+        {
+        "name": "json",
+        "output": "results/report.json"
+        }
+    ],
+    "skipJsErrors": true
+}

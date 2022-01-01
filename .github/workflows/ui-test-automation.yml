@@ -1,0 +1,32 @@
+name: Test Automation of DemoQA
+
+# Run on pull requests
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  automation-flow:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.22.8
+    # Clon repo
+    - uses: actions/checkout@v2
+    # Setup .env file
+    - name: Setup .env file with repo scerets
+      run: |
+        echo "USERNAME=${{ secrets.DEMOQA_USERNAME }}" >> .env
+        echo "PASSWORD=${{ secrets.DEMOQA_PASSWORD }}" >> .env
+    # Run TestCafe full suite
+    - name: Install TestCafe from 'npm' and run tests in Chrome browser
+      uses: DevExpress/testcafe-action@latest
+      with:
+        args: "\"chrome '--window-size=1440,800'\""
+    # Upload the results to Calliope Pro
+    - name: Upload results to Calliope Pro
+      run: curl -X POST
+          -H "x-api-key:${{ secrets.CALLIOPEPRO_API_KEY }}"
+          -H "multipart/form-data"
+          -F "file[]=@results/report.json"
+          "https://app.calliope.pro/api/v2/profile/${{ secrets.CALLIOPEPRO_PROFILE_ID }}/import/testcafe"
