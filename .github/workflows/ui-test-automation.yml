@@ -21,7 +21,7 @@ jobs:
     - name: Install TestCafe from 'npm' and Run Tests in Chrome browser
       uses: DevExpress/testcafe-action@latest
       with:
-        args: "\"chrome '--window-size=1440,800'\""
+        args: "chrome"
     # Upload the results to Calliope Pro
     - name: Upload results to Calliope Pro
       run: curl -X POST
