@@ -4,7 +4,6 @@ name: Test Automation of DemoQA
 on:
   pull_request:
     branches: [ main ]
-
 jobs:
   automation-flow:
     # Test automation flow
@@ -16,12 +15,14 @@ jobs:
     # Repo clon
     - uses: actions/checkout@v2
     # Setup .env file
-    - run: echo "USERNAME=${{ secrets.DEMOQA_USERNAME }} PASSWORD=${{ secrets.DEMOQA_PASSWORD }}" >> .env
+    - run: |
+        echo "USERNAME=${{ secrets.DEMOQA_USERNAME }}" >> .env
+        echo "PASSWORD=${{ secrets.DEMOQA_PASSWORD }}" >> .env
     # Run TestCafe Suite
     - name: Install TestCafe from 'npm' and Run Tests in Chrome browser
       uses: DevExpress/testcafe-action@latest
       with:
-        args: "chrome"
+        args: "\"chrome '--window-size=1440,800'\""
     # Upload the results to Calliope Pro
     - name: Upload results to Calliope Pro
       run: curl -X POST
