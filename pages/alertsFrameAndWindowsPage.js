@@ -42,7 +42,7 @@ class Alerts{
         await t
             .expect(this.timerAlertButton.exists).ok()
             .click(this.timerAlertButton)
-            .wait(6000)
+            .wait(6000) // This alert only shows it's native dialogue 5 seconds after click
         const history = await t.getNativeDialogHistory();
         await t.expect(history[0].text).eql('This alert appeared after 5 seconds');
     }

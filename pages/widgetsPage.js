@@ -1,19 +1,15 @@
 import { Selector, t } from 'testcafe';
-import { randomNumber } from '../helpers/utils';
 
 class Widgets {
     constructor() {
         this.sliderInput = Selector('input.range-slider');
     }
 
-    // Using workaround due testcafe's lack of support of '<input type="range>"' Html5 element
-    async dragSlider() {
-        const newValue = randomNumber(101).toString();
+    // Using .typeText as workaround due testcafe's lack of support of '<input type="range>"' Html5 element
+    async dragSliderTo(value) {
         await t
-            .expect(this.sliderInput.exists).ok()
-            .expect(this.sliderInput.value).eql('25')// Default value
-            .typeText(this.sliderInput, newValue)
-            .expect(this.sliderInput.value).eql(newValue);
+            .typeText(this.sliderInput, value)
+            .expect(this.sliderInput.value).eql(value);
     }
 }
 
