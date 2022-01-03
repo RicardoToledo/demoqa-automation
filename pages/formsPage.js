@@ -1,10 +1,7 @@
 import { Selector, t } from "testcafe";
-import userGenerator from '../helpers/userGenerator.js';
 
 class Forms {
-    constructor() {
-        this.validStudent = userGenerator.generateFormStudent();// TODO: esta bien aqui?
-        
+    constructor() {        
         // Form Selectors
         this.firstNameInput = Selector('#firstName');
         this.lastNameInput = Selector('#lastName');
@@ -17,13 +14,10 @@ class Forms {
         this.hobbiesReadingCheckbox = Selector('label').withText('Reading');
         this.pictureUploadButton = Selector('#uploadPicture');
         this.currentAddressTextArea = Selector('#currentAddress');
-
-        this.stateDropdown = Selector('#stateCity-wrapper').child(1);
-        this.cityDropdown = Selector('#stateCity-wrapper').child(2);
-        // this.stateDropdown = Selector('#state div').withText('Select State');
-        // this.cityDropdown = Selector('#city div').withText('Select City');
-        // TODO
-
+        // this.stateDropdown = Selector('#stateCity-wrapper').child(1);
+        // this.cityDropdown = Selector('#stateCity-wrapper').child(2);
+        this.stateDropdown = Selector('#state div').withText('Select State');
+        this.cityDropdown = Selector('#city div').withText('Select City');
         this.submitFormButton = Selector('#submit');
 
         // Modal
@@ -32,43 +26,56 @@ class Forms {
 
         // Recycled
         this.closeAdArrow = Selector('#close-fixedban');
-
+    }
+    
+    async fillForm(student) {
+        await this.fillName(student.firstName, student.lastName);
+        await this.fillEmail(student.email);
+        await this.selectMaleGender();
+        await this.fillMobileNumber(student.mobileNumber);
+        await this.fillDateOfBirth(student.birthDate);
+        await this.fillHistorySubject();
+        await this.selectReadingHobbie();
+        await this.uploadPicture();
+        await this.fillCurrentAddress(student.address);
+        await this.selectStateAndCity();
+        await this.submitForm();
     }
 
-    async fillName() {
+    async fillName(firstName, lastName) {
         await t
             .expect(this.firstNameInput.exists).ok()
-            .typeText(this.firstNameInput, this.validStudent.firstName, { paste: true })
+            .typeText(this.firstNameInput, firstName, { paste: true })
             .expect(this.lastNameInput.exists).ok()
-            .typeText(this.lastNameInput, this.validStudent.lastName, { paste: true })
+            .typeText(this.lastNameInput, lastName, { paste: true })
     }
 
-    async fillEmail() {
+    async fillEmail(email) {
         await t
             .expect(this.emailInput.exists).ok()
-            .typeText(this.emailInput, this.validStudent.email, { paste: true })
+            .typeText(this.emailInput, email, { paste: true })
     }
 
-    async selectGender() {
+    async selectMaleGender() {
         await t
             .expect(this.genderMaleRadioLabel.exists).ok()
             .click(this.genderMaleRadioLabel)
     }
 
-    async fillMobileNumber() {
+    async fillMobileNumber(mobileNumber) {
         await t
             .expect(this.mobileNumberInput.exists).ok()
-            .typeText(this.mobileNumberInput, this.validStudent.mobileNumber, { paste: true })
+            .typeText(this.mobileNumberInput, mobileNumber, { paste: true })
     }
 
-    async fillDateOfBirth() {
+    async fillDateOfBirth(birthDate) {
         await t
             .expect(this.dateOfBirthInput.exists).ok()
-            .typeText(this.dateOfBirthInput, this.validStudent.birthDate, { replace: true })
+            .typeText(this.dateOfBirthInput, birthDate, { replace: true })
             .pressKey('enter')
     }
 
-    async fillSubject() {
+    async fillHistorySubject() {
         await t
             .expect(this.subjectsInput.exists).ok()
             .typeText(this.subjectsInput, 'Histor')
@@ -76,11 +83,10 @@ class Forms {
             .expect(this.subjectsSuggestionInput.exists).ok()
     }
 
-    async selectHobbie() {
+    async selectReadingHobbie() {
         await t
             .expect(this.hobbiesReadingCheckbox.exists).ok()
             .click(this.hobbiesReadingCheckbox)
-
     }
 
     async uploadPicture() {
@@ -89,10 +95,10 @@ class Forms {
             .setFilesToUpload(this.pictureUploadButton, '../mocks/example-image.jpeg')
     }
 
-    async fillCurrentAddress() {
+    async fillCurrentAddress(address) {
         await t
             .expect(this.currentAddressTextArea.exists).ok()
-            .typeText(this.currentAddressTextArea, this.validStudent.address)
+            .typeText(this.currentAddressTextArea, address)
     }
 
     // Selects state and city (using keys press approach)

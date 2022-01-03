@@ -1,5 +1,6 @@
 import { Selector, t } from 'testcafe';
 import { URL } from '../data/constants';
+import { USER_TYPE } from '../data/enums';
 
 class Bookstore {
     constructor() {
@@ -27,14 +28,14 @@ class Bookstore {
         this.deleteAllBooksButton = Selector('#submit').withText('Delete All Books').filterVisible();
         this.closeModalButton = Selector('#closeSmallModal-ok');
         this.goToBookStoreButton = Selector('#gotoStore');
-        
+
         // Bookstore
         this.bookStoreHeader = Selector('.main-header').withText('Book Store');
         this.searchBar = Selector('#searchBox');
         this.booksList = Selector('.action-buttons a');// List of all books titles containing their respective links
         this.searchBar = Selector('#searchBox');
         this.gitBookLink = Selector('a').withText('Git Pocket Guide');
-        
+
         // Individual book page
         this.bookTitleLabel = Selector('#userName-value');// .withText() is added during execution to specify title
         this.addBookButton = Selector('#addNewRecordButton').withText('Add To Your Collection');
@@ -62,21 +63,21 @@ class Bookstore {
             .typeText(this.userNameInput, user.userName, { paste: true })
             .expect(this.passwordInput.exists).ok()
             .typeText(this.passwordInput, user.password, { paste: true })
-        if (userType !== 'invalidUserRecaptcha')
+        if (userType !== USER_TYPE.INVALID_RECAPTCHA)
             this.recaptchaHandler();
         await t
             .expect(this.registerButton.exists).ok()
             .setNativeDialogHandler(() => true)
             .click(this.registerButton);
         switch (userType) {
-            case 'validUser':
+            case USER_TYPE.VALID:
                 const history = await t.getNativeDialogHistory();
                 await t.expect(history[0].text).eql('User Register Successfully.')
                 break
-            case 'invalidUserPassword':
+            case USER_TYPE.INVALID_PASSWORD:
                 await t.expect(this.invalidPasswordMessage.exists).ok()
                 break
-            case 'invalidUserRecaptcha':
+            case USER_TYPE.INVALID_RECAPTCHA:
                 await t.expect(this.missingRecaptchaMessage.exists).ok()
                 break
             default:
@@ -97,8 +98,8 @@ class Bookstore {
     /**
      * Login function
      * @param {*} username 
-     * @param {*} password
-     * TODO return boolean, separate validation 
+     * @param {*} password 
+     * @returns true if login is succesful, false if user is not valid
      */
     async submitLogin(username, password) {
         const loginPage = `${URL.PRODUCTION}/login`;
@@ -111,8 +112,6 @@ class Bookstore {
             .typeText(this.passwordInput, password, { paste: true })
             .expect(this.loginButton.exists).ok()
             .click(this.loginButton)
-        // const currentPage = ClientFunction(() => window.location.href);
-        // if (await t.expect(currentPage()).eql(loginPage), { timeout: 5000 })// No redirection happened
         if (await this.loadingLoginLabel.exists) {
             await t.expect(this.profileHeader.exists).ok()
             return true;
@@ -137,10 +136,10 @@ class Bookstore {
         const bookName = await bookFromList.innerText;
         await t
             .expect(await bookFromList.visible).ok()
-            .expect(this.closeAdArrow.visible).ok()
-            .click(this.closeAdArrow)
+            .expect(this.closeAdArrow.visible).ok()// Closing the add at the bottom of the page
+            .click(this.closeAdArrow)// TODO: create a closeAddIfExists function for excalability
             .click(bookFromList, { offsetX: 1, offsetY: 1 })
-            .expect(this.bookTitleLabel.withText(bookName).innerText).eql(bookName)// Book in individual page = Book from list
+            .expect(this.bookTitleLabel.withText(bookName).innerText).eql(bookName)// Book showing in individual page = Book extracted from list
             .setNativeDialogHandler(() => true)
             .expect(this.closeAdArrow.visible).ok()
             .click(this.closeAdArrow)
@@ -168,14 +167,14 @@ class Bookstore {
             .expect(this.emptyRowsMessage.exists).ok();
     }
 
-    async searchRandomBook(index) {        
+    async searchRandomBook(index) {
         const bookFromList = this.booksList.nth(index);
         const bookName = await bookFromList.innerText;
-        const shortedName = bookName.split(' ')[0] + ' ' + bookName.split(' ')[1];
+        const shortedName = `${bookName.split(" ")[0]} ${bookName.split(" ")[1]}`;
         await t
             .expect(this.searchBar.exists).ok()
             .typeText(this.searchBar, shortedName)
-            .expect(await bookFromList.exists).ok()
+            .expect(await bookFromList.exists).ok();
     }
 }
 
