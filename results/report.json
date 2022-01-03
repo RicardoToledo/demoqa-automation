@@ -1,0 +1,256 @@
+{
+  "startTime": "2022-01-03T06:00:20.707Z",
+  "endTime": "2022-01-03T06:02:11.773Z",
+  "userAgents": [
+    "Chrome 96.0.4664.110 / macOS 10.15.7"
+  ],
+  "passed": 18,
+  "total": 18,
+  "skipped": 2,
+  "fixtures": [
+    {
+      "name": "Alerts: Check correct handle of alerts",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/alertsFrameAndWindows/triggerAlerts.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Successfully trigger and handle standard alert",
+          "meta": {},
+          "errs": [],
+          "durationMs": 4951,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Successfully trigger and handle 5 secods timed standard alert",
+          "meta": {},
+          "errs": [],
+          "durationMs": 7972,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Successfully trigger and handle confirmation alert",
+          "meta": {},
+          "errs": [],
+          "durationMs": 1955,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Successfully trigger prompt alert and introduce random name",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2213,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Book Store Application: Adding books",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/bookStoreApp/addBooks.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Successfully add 1 random book to user's collection and remove all books from it",
+          "meta": {},
+          "errs": [],
+          "durationMs": 10664,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Successfully add all books to user's collection and remove them from it",
+          "meta": {},
+          "errs": [],
+          "durationMs": 45151,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Book Store Application: Login",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/bookStoreApp/login.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Successfully login with registered user and logout",
+          "meta": {},
+          "errs": [],
+          "durationMs": 3647,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Attempt to login with unregistered user",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2797,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Book Store Application: Register user",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/bookStoreApp/registerUser.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Succesfully register valid user using reCAPTCHA",
+          "meta": {},
+          "errs": [],
+          "durationMs": 1,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": true
+        },
+        {
+          "name": "Attempt to register user using reCAPTCHA and invalid password (pasword length < 8)",
+          "meta": {},
+          "errs": [],
+          "durationMs": 1,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": true
+        },
+        {
+          "name": "Attempt to register valid user without reCAPTCHA",
+          "meta": {},
+          "errs": [],
+          "durationMs": 3135,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Book Store Application: Search book",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/bookStoreApp/searchBook.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Successfully shows correct random book using incomplete name (first two words of title) in searchbar",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2817,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Successfully shows no book using word not related no any book title in searchbar",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2605,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Elements: Verification of images",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/elements/verifyImages.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Verify valid image correctly displays and has the expected URL",
+          "meta": {},
+          "errs": [],
+          "durationMs": 1693,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Verify broken image does not render even having the expected URL",
+          "meta": {},
+          "errs": [],
+          "durationMs": 1627,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Home page: Verification of elements",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/homePage/verifyHomeElements.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "All home page elements correctly load",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2740,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Header and Banner links/href properties point to the correct url",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2404,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "All category cards successfully redirect to each respective page",
+          "meta": {},
+          "errs": [],
+          "durationMs": 5153,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Practice Form: Student registration form filling",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/practiceForm/fillStudentForm.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Succesfully register a valid student with random data",
+          "meta": {},
+          "errs": [],
+          "durationMs": 6839,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "Widgets: Interaction with widgets",
+      "path": "/Users/ricardotoledo/Desktop/sC_assignments/demoqa-automation/tests/widgets/dragSlider.js",
+      "meta": {},
+      "tests": [
+        {
+          "name": "Succesfully drag slider from default to random value (0-100)",
+          "meta": {},
+          "errs": [],
+          "durationMs": 2524,
+          "unstable": false,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}
