@@ -16,7 +16,7 @@ jobs:
     # Setup .env file
     - name: Setup .env file with repo scerets
       run: |
-        echo "USERNAME=${{ secrets.DEMOQA_USERNAME }}" >> .env
+        echo "USERNAME=${{ secrets.DEMOQA_USERNAME }}" > .env
         echo "PASSWORD=${{ secrets.DEMOQA_PASSWORD }}" >> .env
     # Run TestCafe full suite
     - name: Install TestCafe from 'npm' and run tests in Chrome browser
