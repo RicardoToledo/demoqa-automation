@@ -1,6 +1,6 @@
 {
-  "startTime": "2022-01-03T06:00:20.707Z",
-  "endTime": "2022-01-03T06:02:11.773Z",
+  "startTime": "2022-01-04T05:51:43.124Z",
+  "endTime": "2022-01-04T05:53:32.583Z",
   "userAgents": [
     "Chrome 96.0.4664.110 / macOS 10.15.7"
   ],
@@ -17,7 +17,7 @@
           "name": "Successfully trigger and handle standard alert",
           "meta": {},
           "errs": [],
-          "durationMs": 4951,
+          "durationMs": 5220,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -26,7 +26,7 @@
           "name": "Successfully trigger and handle 5 secods timed standard alert",
           "meta": {},
           "errs": [],
-          "durationMs": 7972,
+          "durationMs": 8326,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -35,7 +35,7 @@
           "name": "Successfully trigger and handle confirmation alert",
           "meta": {},
           "errs": [],
-          "durationMs": 1955,
+          "durationMs": 1999,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -44,7 +44,7 @@
           "name": "Successfully trigger prompt alert and introduce random name",
           "meta": {},
           "errs": [],
-          "durationMs": 2213,
+          "durationMs": 2062,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -60,7 +60,7 @@
           "name": "Successfully add 1 random book to user's collection and remove all books from it",
           "meta": {},
           "errs": [],
-          "durationMs": 10664,
+          "durationMs": 10203,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -69,7 +69,7 @@
           "name": "Successfully add all books to user's collection and remove them from it",
           "meta": {},
           "errs": [],
-          "durationMs": 45151,
+          "durationMs": 44928,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -85,7 +85,7 @@
           "name": "Successfully login with registered user and logout",
           "meta": {},
           "errs": [],
-          "durationMs": 3647,
+          "durationMs": 3677,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -94,7 +94,7 @@
           "name": "Attempt to login with unregistered user",
           "meta": {},
           "errs": [],
-          "durationMs": 2797,
+          "durationMs": 2734,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -128,7 +128,7 @@
           "name": "Attempt to register valid user without reCAPTCHA",
           "meta": {},
           "errs": [],
-          "durationMs": 3135,
+          "durationMs": 3246,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -144,7 +144,7 @@
           "name": "Successfully shows correct random book using incomplete name (first two words of title) in searchbar",
           "meta": {},
           "errs": [],
-          "durationMs": 2817,
+          "durationMs": 2832,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -153,7 +153,7 @@
           "name": "Successfully shows no book using word not related no any book title in searchbar",
           "meta": {},
           "errs": [],
-          "durationMs": 2605,
+          "durationMs": 2191,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -169,7 +169,7 @@
           "name": "Verify valid image correctly displays and has the expected URL",
           "meta": {},
           "errs": [],
-          "durationMs": 1693,
+          "durationMs": 1724,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -178,7 +178,7 @@
           "name": "Verify broken image does not render even having the expected URL",
           "meta": {},
           "errs": [],
-          "durationMs": 1627,
+          "durationMs": 1659,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -194,7 +194,7 @@
           "name": "All home page elements correctly load",
           "meta": {},
           "errs": [],
-          "durationMs": 2740,
+          "durationMs": 2755,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -203,7 +203,7 @@
           "name": "Header and Banner links/href properties point to the correct url",
           "meta": {},
           "errs": [],
-          "durationMs": 2404,
+          "durationMs": 2342,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -212,7 +212,7 @@
           "name": "All category cards successfully redirect to each respective page",
           "meta": {},
           "errs": [],
-          "durationMs": 5153,
+          "durationMs": 4346,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -228,7 +228,7 @@
           "name": "Succesfully register a valid student with random data",
           "meta": {},
           "errs": [],
-          "durationMs": 6839,
+          "durationMs": 6978,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
@@ -244,7 +244,7 @@
           "name": "Succesfully drag slider from default to random value (0-100)",
           "meta": {},
           "errs": [],
-          "durationMs": 2524,
+          "durationMs": 2028,
           "unstable": false,
           "screenshotPath": null,
           "skipped": false
