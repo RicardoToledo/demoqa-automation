@@ -25,7 +25,7 @@ In order to run the tests you need to have installed:
   - [Chrome](https://www.google.com/chrome/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
-Once the requirements have been installed, clone the repo to your local machine and use the next [npm](https://www.npmjs.com/) command to install the project:
+Once the requirements have been installed, clone the repo into your local machine and use the next [npm](https://www.npmjs.com/) command being in the root directory to install the project:
 
 ```bash
 $ npm install
