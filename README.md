@@ -12,7 +12,7 @@
       - [Firefox](#firefox)
       - [All browsers](#all-browsers)
       - [Directly running the suite with Testcafe command](#directly-running-the-suite-with-testcafe-command)
-  * [CI/CD with GitHub Actions](https://github.com/RicardoToledo/ui-automation-assignment#cicd-with-github-actions)
+  * [CI/CD with GitHub Actions](#cicd-with-github-actions)
       - [Results in Calliope.Pro](#results-in-calliopepro)
   * [License](#license)
 
@@ -37,7 +37,15 @@ Details about the test scenarios such as selection criteria, scope and more can 
 
 ## Usage
 
-The test suite supports execution with the next combinations of browsers and modes, run one of the next predefined script commands to start the complete test suite:
+The test suite supports execution with the next combinations of browsers and modes, run one of the next predefined `npm` script commands to start the complete test suite.
+
+Example:
+```bash
+$ npm run <command>
+
+e.g.
+$ npm run test-all-chrome
+```
 
 #### Chrome
 | Description | Command |
