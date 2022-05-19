@@ -10,7 +10,7 @@
 - [Test Suite](#test-suite)
 - [Test deliverables](#test-deliverables)
   * [Found bugs](#found-bugs)
-- [Improvements / Next steps](#improvements---next-steps)
+- [Improvements / Next steps](#improvements--next-steps)
   
 ## Test scope
 
@@ -57,11 +57,14 @@ To decide the priority of the scenarios I was making the question "from what per
 | Widgets | [ ] | [ ] | [x] |
 
 Number of checks = priority
-3 = High
-2 = Medium
+
+3 = High, 
+2 = Medium, 
 1 = Low
 
-**Answer:** Using the previous table I concluded the more important scenarios to automate were the ones in these two pages:
+#### Answer
+
+Using the previous table I concluded the more important scenarios to automate were the ones in these two pages:
 
 - **Home page**: Because this is a very important page in all websites for several reasons, it's the first contact the user has with the site and it will be greatly responsible for user engagement, it should lead the user to where he (or we) want him to go, it shows the "face of the company" (reputation it's important), and more other factors.
 For example, in the case of demoqa.com's business perspective, this is not only a page where all the modules are listed but also contains a banner for their online courses ( so the goal of the site is also to buy courses from them)

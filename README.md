@@ -20,7 +20,7 @@
 
 #### Requirements
 In order to run the tests you need to have installed:
-- [Node.js](https://nodejs.org/en/download/)
+- [Node.js v12.22.8](https://nodejs.org/download/release/v12.22.8/)
 - At least one of the next web browsers:
   - [Chrome](https://www.google.com/chrome/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
