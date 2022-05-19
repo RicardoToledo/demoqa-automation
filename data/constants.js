@@ -10,5 +10,5 @@ export const CREDENTIALS = {
 
 export const URL = {
     PRODUCTION : 'https://demoqa.com',// url already public, no need to hide it
-    PREPRODUCTION : process.env.PREPRODUCTION_URL// example of different private environment
+    PREPRODUCTION : process.env.PREPRODUCTION_URL// example of pre-production private environment/url
 }

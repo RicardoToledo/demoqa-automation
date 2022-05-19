@@ -5,7 +5,7 @@ import { randomNumber } from '../../helpers/utils';
 fixture `Widgets: Interaction with widgets`
     .page `${URL.PRODUCTION}/slider`;
 
-test ('Succesfully drag slider from default to random value (0-100)', async t => {
+test('Succesfully drag slider from default to random value (0-100)', async t => {
     const newValue = randomNumber(101).toString();
     await t
         .expect(widgets.sliderInput.exists).ok()
