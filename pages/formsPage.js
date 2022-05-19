@@ -14,8 +14,6 @@ class Forms {
         this.hobbiesReadingCheckbox = Selector('label').withText('Reading');
         this.pictureUploadButton = Selector('#uploadPicture');
         this.currentAddressTextArea = Selector('#currentAddress');
-        // this.stateDropdown = Selector('#stateCity-wrapper').child(1);
-        // this.cityDropdown = Selector('#stateCity-wrapper').child(2);
         this.stateDropdown = Selector('#state div').withText('Select State');
         this.cityDropdown = Selector('#city div').withText('Select City');
         this.submitFormButton = Selector('#submit');

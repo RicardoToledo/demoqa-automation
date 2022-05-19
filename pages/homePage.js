@@ -33,11 +33,11 @@ class HomePage {
     }
 
     async cardsRedirection() {
-        for (const card of this.categoryCardList) {
+        for (const categoryCard of this.categoryCardList) {
             await t
-                .expect(card.selectorElement.exists).ok()
-                .click(card.selectorElement)
-                .expect(elements.headerTitle.textContent).contains(card.titleText);
+                .expect(categoryCard.selectorElement.exists).ok()
+                .click(categoryCard.selectorElement)
+                .expect(elements.headerTitle.textContent).contains(categoryCard.titleText);
             await goBackToPreviousPage();
         }
     }

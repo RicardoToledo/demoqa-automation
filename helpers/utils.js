@@ -4,7 +4,7 @@ export const goBackToPreviousPage = ClientFunction(() => window.history.back());
 
 /**
  * returns true if image is broken/not rendering correctly
- * which means naturalWidth property from img with srcAttribute = 0
+ * which means (naturalWidth property from img with srcAttribute) = 0
  * note: naturalWidth is not available in testcafe's DOMNodeState object
  */
 export const isImageBroken =  ClientFunction(srcAttribute => {

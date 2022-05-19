@@ -10,7 +10,7 @@ test.after(async () => {
     await t.expect(await bookstore.submitLogin(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)).ok()
 });
 
-test ('Attempt to login with unregistered user', async t => {    
+test('Attempt to login with unregistered user', async t => {    
     const { userName, password } = userGenerator.generateLoginUser();    
     await t.expect(await bookstore.submitLogin(userName, password)).notOk();
 });
