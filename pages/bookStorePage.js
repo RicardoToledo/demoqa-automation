@@ -73,13 +73,13 @@ class Bookstore {
             case USER_TYPE.VALID:
                 const history = await t.getNativeDialogHistory();
                 await t.expect(history[0].text).eql('User Register Successfully.')
-                break;
+                break
             case USER_TYPE.INVALID_PASSWORD:
                 await t.expect(this.invalidPasswordMessage.exists).ok()
-                break;
+                break
             case USER_TYPE.INVALID_RECAPTCHA:
                 await t.expect(this.missingRecaptchaMessage.exists).ok()
-                break;
+                break
             default:
                 console.warn('unsupported user type: ' + userType)
                 break;
@@ -128,7 +128,7 @@ class Bookstore {
     }
 
     /**
-     * Adds book to collection based on index
+     * function to add book by index
      * @param {*} index 
      */
     async addBook(index) {
@@ -137,7 +137,7 @@ class Bookstore {
         await t
             .expect(await bookFromList.visible).ok()
             .expect(this.closeAdArrow.visible).ok()// Closing the add at the bottom of the page
-            .click(this.closeAdArrow)// TODO: create a closeAddIfExists function for scalability
+            .click(this.closeAdArrow)// TODO: create a closeAddIfExists function for excalability
             .click(bookFromList, { offsetX: 1, offsetY: 1 })
             .expect(this.bookTitleLabel.withText(bookName).innerText).eql(bookName)// Book showing in individual page = Book extracted from list
             .setNativeDialogHandler(() => true)
